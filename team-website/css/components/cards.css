@@ -1,0 +1,50 @@
+/*
+ * Card Component Styles
+ * Styling for card components used throughout the site
+ */
+
+.card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-light);
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--spacing-md);
+}
+
+.card-content h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-content p {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Card layouts */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
