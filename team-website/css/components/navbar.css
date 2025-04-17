@@ -3,14 +3,16 @@
  * Styling for the site navigation
  */
 
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background-color: var(--background-color);
-    box-shadow: var(--box-shadow-light);
+ .main-nav {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-blue);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--box-shadow-light);
+    border-bottom: 10px solid var(--light-blue);
+    height: 70px;
 }
 
 .logo a {
@@ -19,19 +21,32 @@
     color: var(--primary-color);
 }
 
+.logo img {
+    height: 60px; /* Adjust as needed to match the original look */
+    padding: 3px;
+  }
+  
+
 .nav-links {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     gap: var(--spacing-lg);
 }
 
 .nav-links li a {
-    color: var(--text-color);
+    color: var(--text-color-light);
+    font-weight: 700;
+    letter-spacing: 2px;
     transition: color var(--transition-fast);
 }
 
-.nav-links li a:hover,
+.nav-links li a:hover {
+    color: var(--light-blue-accent)
+}
 .nav-links li a.active {
-    color: var(--primary-color);
+    color: var(--light-blue);
 }
 
 /* Mobile burger menu */
@@ -52,14 +67,14 @@
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
-        right: 0;
+        left: 0;              /* new: span full width */
+        right: 0;             /* new: span full width */
         top: 100%;
-        height: calc(100vh - 60px);
+        height: auto;         /* modified from calc(100vh - 60px) */
         background-color: var(--background-color);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
         transform: translateX(100%);
         transition: transform var(--transition-medium);
         z-index: 10;

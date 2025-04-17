@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iGem - Home</title>
-    <!-- CSS imports -->
+    <title>iGEM KU Leuven - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 
 <body>
@@ -14,11 +17,14 @@
     <header id="navbar">
         <nav class="main-nav">
             <div class="logo">
-                <a href="index.html">iGem</a>
+                <img src="../team-website/assets/generalimgs/ku leuven logo.png" alt="KU Leuven Logo">
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="our_team.html">Our Team</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="past_editions.html">Past Editions</a></li>
+                <li><a href="press.html">Press</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="burger">
@@ -29,76 +35,43 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero section -->
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to iGEM</h1>
-                <p>Revolutionizing synthetic biology solutions</p>
-                <button class="btn btn-primary">Learn More</button>
+    <section class="hero">
+        <img src="../team-website/assets/generalimgs/home-header.svg" alt="KU Leuven iGEM Team">
+    </section>
+    
+        
+    <footer class="site-footer">
+        <div class="wave-wrapper">
+            <svg width="1440" height="605" viewBox="0 0 1440 605" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1442.43 37.966C1101.38 -191.774 824.532 753.123 -0.757233 44.4502V165.804C639.967 760.534 1125.45 -65.7879 1442.43 123.191V37.966Z" fill="#02C0F2"/>
+                <path d="M1442.43 123.191C1125.45 -65.7879 639.967 760.534 -0.757233 165.804V44.4502C824.532 753.123 1101.38 -191.774 1442.43 37.966V123.191ZM1442.43 123.191V604.904" stroke="#02C0F2"/>
+                <path d="M1462.49 123.545C1258.52 -109.729 609.903 730.798 -2 145.762V604.904H1462.49V123.545Z" fill="#003F7E" stroke="#02C0F2"/>
+            </svg>                
+          </div>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Contact details</h3>
+                <p><strong>Email:</strong> <a href="mailto:info@igemleuven.be">info@igemleuven.be</a></p>
             </div>
-        </section>
-
-        <!-- Featured Projects -->
-        <section class="projects">
-            <div class="container">
-                <h2>Our Projects</h2>
-                <div class="cards-container">
-                    <!-- Project Card 1 -->
-                    <div class="card">
-                        <img src="assets/images/project1.jpg" alt="Project 1">
-                        <div class="card-content">
-                            <h3>Project Alpha</h3>
-                            <p>Innovative solution for environmental challenges</p>
-                            <a href="#" class="btn btn-secondary">View Details</a>
-                        </div>
+        
+            <div class="footer-col">
+                <h3>Find us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/igemkuleuven/"><img src="../team-website/assets/icons/instagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/KULeuveniGEM/"><img src="../team-website/assets/icons/facebook.png"  alt="Facebook"></a>
+                        <a href="https://www.linkedin.com/company/kuleuvenigem/"><img src="../team-website/assets/icons/linkedin.png"  alt="LinkedIn"></a>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="card">
-                        <img src="assets/images/project2.jpg" alt="Project 2">
-                        <div class="card-content">
-                            <h3>Project Beta</h3>
-                            <p>Bioengineering for medical applications</p>
-                            <a href="#" class="btn btn-secondary">View Details</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer Component -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <p>Email: team@igem.org</p>
-                    <p>Phone: (123) 456-7890</p>
+        
+            <div class="footer-col">
+                <h3>Map</h3>
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20148.822918006128!2d4.676904!3d50.857038!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c1613fcd4c904f%3A0xb8754dca7be5740c!2siGEM%20KULeuven!5e0!3m2!1sen!2sbe!4v1744918552497!5m2!1sen!2sbe" 
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 iGem. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </footer>          
 
     <!-- JavaScript imports -->
     <script src="js/components/navbar.js"></script>

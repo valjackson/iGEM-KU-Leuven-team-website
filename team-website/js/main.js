@@ -4,8 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('iGem Team Website - Ready!');
-    
+
     // Initialize all components
     initNavbar();
     

@@ -5,15 +5,12 @@
 
 :root {
     /* Color Palette */
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --accent-color: #e74c3c;
+    --dark-blue: #00407A;
+    --light-blue: #52BDEC;
+    --light-blue-accent: #A4D7E1;
     --background-color: #ffffff;
-    --dark-background: #2c3e50;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #333333;
-    --text-color: #2c3e50;
+    --text-color: black;
+    --text-color-light: #ffffff;
     
     /* Spacing */
     --spacing-xs: 0.25rem;
