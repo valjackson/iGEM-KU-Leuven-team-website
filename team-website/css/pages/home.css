@@ -4,3 +4,6 @@
     object-fit: cover; /* ensures the image covers the area */
     display: block;
 }
+body {
+    margin-top: 50px;
+}
