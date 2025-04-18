@@ -37,7 +37,8 @@
   .nav-links li a {
     color: var(--text-color-light);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 800;
+    letter-spacing: 2px;
     transition: color var(--transition-fast);
   }
   .nav-links li a:hover {

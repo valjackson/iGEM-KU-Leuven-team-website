@@ -12,6 +12,13 @@
     <link rel="icon" href="../team-website/assets/icons/iGEM_logo_favicon.ico" type="image-x-icon">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/pages/contact.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+    </script>
 </head>
 
 <body>
@@ -63,14 +70,43 @@
                     <h1 class="title">GET IN CONTACT</h1>
                 </div>
             </section>
+
+            <section class="contact-form-section">
+                <div class="content">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <div class="btn-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </section>
         </div>
-        
+
         <footer class="site-footer">
             <div class="wave-wrapper">
                 <svg width="1444" height="391" viewBox="0 0 1444 391" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1444 36.9719C1103 -192.805 826.185 752.243 1 43.4571V164.831C641.643 759.655 1127.07 -66.7985 1444 122.211V36.9719Z" fill="#02C0F2"/>
                     <path d="M1444 120.736C1239.96 -99.7551 612.115 694.712 0 141.735V390.5H1444V120.736Z" fill="#003F7E"/>
-                    </svg>                         
+                </svg>
             </div>
             <div class="footer-bg">
                 <div class="footer-content">
@@ -78,16 +114,14 @@
                         <h4>Contact details</h4>
                         <p><strong>Email:</strong> <a href="mailto:info@igemleuven.be">info@igemleuven.be</a></p>
                     </div>
-                
                     <div class="footer-col">
                         <h4>Find us</h4>
-                            <div class="social-icons">
-                                <a href="https://www.instagram.com/igemkuleuven/"><img src="../team-website/assets/icons/instagram.png" alt="Instagram"></a>
-                                <a href="https://www.facebook.com/KULeuveniGEM/"><img src="../team-website/assets/icons/facebook.png"  alt="Facebook"></a>
-                                <a href="https://www.linkedin.com/company/kuleuvenigem/"><img src="../team-website/assets/icons/linkedin.png"  alt="LinkedIn"></a>
-                            </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/igemkuleuven/"><img src="../team-website/assets/icons/instagram.png" alt="Instagram"></a>
+                            <a href="https://www.facebook.com/KULeuveniGEM/"><img src="../team-website/assets/icons/facebook.png"  alt="Facebook"></a>
+                            <a href="https://www.linkedin.com/company/kuleuvenigem/"><img src="../team-website/assets/icons/linkedin.png"  alt="LinkedIn"></a>
+                        </div>
                     </div>
-                
                     <div class="footer-col">
                         <h4>Map</h4>
                         <div class="map-placeholder">
@@ -97,7 +131,7 @@
                     </div>
                 </div>
             </div>
-        </footer>          
+        </footer>
     </div>
 
     <!-- JavaScript imports -->
@@ -151,7 +185,7 @@
     </script>
     <script src="js/components/navbar.js"></script>
     <script src="js/utils/animations.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
