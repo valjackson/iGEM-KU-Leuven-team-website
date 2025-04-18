@@ -49,14 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Send email using EmailJS
                 await emailjs.send(
-                    "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-                    "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+                    "service_qb4qpqa", // Replace with your EmailJS service ID
+                    "template_lsfiw75", // Replace with your EmailJS template ID
                     {
-                        from_name: form.name.value,
-                        from_email: form.email.value,
-                        subject: form.subject.value,
+                        name: form.name.value,
+                        email: form.email.value,
+                        title: form.subject.value,
                         message: form.message.value,
                         to_email: "info@igemleuven.be"
+
                     }
                 );
 
