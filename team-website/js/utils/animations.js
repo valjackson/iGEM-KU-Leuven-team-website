@@ -125,3 +125,29 @@ function slideUp(element, duration = 300, callback) {
     
     window.requestAnimationFrame(animate);
 }
+
+// Timeline animations
+function initTimelineAnimations() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+}
+
+// Add to window load event
+window.addEventListener('load', () => {
+    if (document.querySelector('.timeline')) {
+        initTimelineAnimations();
+    }
+});

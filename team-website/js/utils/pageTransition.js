@@ -10,9 +10,23 @@ function initPageTransitions() {
 
         // When everything is loaded
         window.addEventListener('load', () => {
+            const loading = document.querySelector('.page-loading');
+            const pageContent = document.querySelector('.page-content');
+            const footer = document.querySelector('.site-footer');
+            const timeline = document.querySelector('.timeline-wrapper');
+            
+            // Hide loading screen and show content
             loading.classList.remove('active');
             pageContent.classList.add('loaded');
             
+            // Show timeline if it exists
+            if (timeline) {
+                setTimeout(() => {
+                    timeline.classList.add('loaded');
+                }, 300); // Slight delay after main content loads
+            }
+            
+            // Animate footer
             requestAnimationFrame(() => {
                 footer.classList.add('loaded');
             });
@@ -27,11 +41,15 @@ function initPageTransitions() {
             const loading = document.querySelector('.page-loading');
             const pageContent = document.querySelector('.page-content');
             const footer = document.querySelector('.site-footer');
+            const timeline = document.querySelector('.timeline-wrapper');
             
-            // Start transition out
+            // Start the transition
             loading.classList.add('active');
             pageContent.classList.remove('loaded');
             footer.classList.remove('loaded');
+            if (timeline) {
+                timeline.classList.remove('loaded');
+            }
             
             // Wait for transition to complete before navigating
             setTimeout(() => {

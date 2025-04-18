@@ -1,0 +1,157 @@
+/* --- Container --- */
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timeline-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--dark-blue);
+  font-size: 2rem;
+}
+
+/* --- Timeline wrapper --- */
+.timeline-wrapper {
+  position: relative;
+  padding: 40px 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.timeline-wrapper.loaded {
+  opacity: 1;
+}
+
+/* --- Timeline & vertical line --- */
+.timeline {
+  position: relative;
+  padding-left: 200px;  /* Increased padding for year placement */
+  margin-left: 20px;
+  z-index: 1;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 200px;  /* Adjusted line position */
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--dark-blue);
+  z-index: 2;
+}
+
+/* --- Each item --- */
+.timeline-item {
+  margin-bottom: 60px;
+  position: relative;
+  display: flex;
+  opacity: 0;  /* Start hidden for animation */
+  transform: translateY(20px);  /* Start slightly below for animation */
+  transition: all 0.5s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-year {
+  position: absolute;
+  left: -90px;  /* Adjusted position */
+  top: 1.3rem;  /* Aligned with h2 */
+  font-size: 1.7rem;
+  color: var(--dark-blue);
+  z-index: 3;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* --- Content box --- */
+.timeline-content {
+  position: relative;
+  background: var(--light-grey);
+  border-radius: 8px;
+  padding: 25px;  /* Increased padding */
+  margin-right: 50px;
+  flex: 1;
+  display: flex;
+  align-items: stretch;  /* Changed to stretch to fill height */
+  justify-content: space-between;
+  margin-left: 30px;  /* Space for the line */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.timeline-content .desc {
+  max-width: 65%;  /* Slightly wider description */
+}
+.timeline-content h2 {
+  color: var(--dark-blue);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+.timeline-content p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+.timeline-content a {
+  color: var(--light-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+.timeline-content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;  /* Increased from 200px */
+  min-width: 250px; /* Increased to match width */
+  padding-left: 30px; /* Slightly more padding */
+}
+.timeline-content .logo img {
+  max-width: 220px; /* Increased from 180px */
+  width: auto;
+  height: auto;
+  max-height: 150px; /* Increased from 120px */
+  object-fit: contain;
+  margin: 0 auto; /* Better centering */
+}
+/* --- Responsive tweak --- */
+@media screen and (max-width: 600px) {
+  .timeline { 
+    padding-left: 100px;
+    margin-left: 10px;
+  }
+  .timeline::before {
+    left: 70px;
+    height: calc(100% - 40px);  /* Slightly reduced for mobile spacing */
+  }
+  .timeline-item { 
+    flex-direction: column;
+  }
+  .timeline-year {
+    left: -90px;
+    font-size: 1.2rem;
+    top: 1.7rem;
+  }
+
+  
+  .timeline-content { 
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  .timeline-content .desc { 
+    max-width: 100%;
+  }
+  .timeline-content .logo { 
+    width: 100%;
+    min-width: unset;
+    height: 150px;  /* Increased from 120px */
+    margin-top: 20px;
+    padding-left: 0;
+  }
+  .timeline-content .logo img {
+    max-height: 130px; /* Increased from 100px */
+  }
+}
