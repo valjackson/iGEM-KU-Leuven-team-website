@@ -1,9 +1,15 @@
+/* Navbar Variables */
+:root {
+  --navbar-height: 74px; /* 50px logo + padding + border */
+}
+
 /* Navbar Container */
 .main-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--navbar-height);
     background-color: var(--dark-blue);
     border-bottom: 4px solid var(--light-blue);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
