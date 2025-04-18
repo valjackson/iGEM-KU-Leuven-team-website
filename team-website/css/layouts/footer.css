@@ -16,73 +16,88 @@ html, body {
 
 .site-footer {
     flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+.site-footer.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Wave on top */
 .wave-wrapper {
-  line-height: 0;        /* remove extra gap */
-  margin-bottom: 30px;
+    line-height: 0;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
+
 .wave-wrapper svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 /* Blue background under the wave */
 .footer-bg {
-  background-color: var(--dark-blue);
-  margin-top: -35px;    
-  padding-bottom: 2rem;
+    background-color: var(--dark-blue);
+    margin-top: -35px;    
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Your columns live inside the blue block */
 .footer-content {
-  max-width: 1300px;
-  margin-left: 5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: start;
-  color: #fff;
-  min-height: 100%;
-  padding-bottom: 2rem;
+    max-width: 1300px;
+    margin-left: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+    color: #fff;
+    min-height: 100%;
+    padding-bottom: 2rem;
+    transition: transform var(--transition-medium);
+    transform: translateY(0);
 }
 
 /* Column heading accent bar */
 .footer-col h4 {
-  position: relative;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  color: white;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    color: white;
 }
 .footer-col h4::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 1.5em;
-  background: #56BDED;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 1.5em;
+    background: #56BDED;
 }
 
 /* Icons & map */
 .social-icons {
-  display: flex;
-  gap: 1rem;
-  width: 200px;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    gap: 1rem;
+    width: 200px;
+    justify-content: flex-start;
+    align-items: center;
 }
 .map-placeholder iframe {
-  width: 100%;
-  max-width: 250px;
-  height: 130px;
-  border: 0;
-  border-radius: 0.5rem;
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    max-width: 250px;
+    height: 130px;
+    border: 0;
+    border-radius: 0.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 /* — Responsive — */

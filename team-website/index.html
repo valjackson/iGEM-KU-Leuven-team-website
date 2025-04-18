@@ -9,12 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="icon" href="../team-website/assets/icons/iGEM_logo_favicon.ico" type="image-x-icon">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="css/components/loading.css">
 </head>
 
 <body>
+    <div class="page-loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
     <div class="page-container">
-        <div class="content-wrap">
+        <div class="content-wrap page-content">
             <!-- Navigation component -->
             <header id="navbar">
                 <nav class="main-nav">
@@ -39,7 +45,25 @@
 
             <section class="hero">
                 <img src="../team-website/assets/generalimgs/home-header.svg" alt="KU Leuven iGEM Team">
+                <div class="lottie-overlay">
+                    <div class="lottie-scaler">
+                      <lottie-player 
+                          src="../team-website/assets/generalimgs/igem_logo_animation.json"
+                          background="transparent"
+                          loop
+                          autoplay>
+                      </lottie-player>
+                    </div>
+                    <img src="../team-website/assets/generalimgs/ku leuven logo.png" alt="KU Leuven Logo" class="logo-overlay">
+                  </div>
             </section>
+
+            <section>
+                <div class="content">
+                    <h1 class="title">KU LEUVEN'S SYNTETHIC BIOLOGY STUDENT TEAM COMPETING AT THE iGEM COMPETITION</h1>
+                </div>
+            </section>
+            
         </div>
         
         <footer class="site-footer">
@@ -78,6 +102,54 @@
     </div>
 
     <!-- JavaScript imports -->
+    <script src="js/utils/pageTransition.js"></script>
+    <script>
+        // Add page transition handling
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial page load
+            const loading = document.querySelector('.page-loading');
+            const pageContent = document.querySelector('.page-content');
+            const footer = document.querySelector('.site-footer');
+            
+            // Show loading screen initially
+            loading.classList.add('active');
+
+            // When everything is loaded
+            window.addEventListener('load', () => {
+                // Hide loading screen and show content
+                loading.classList.remove('active');
+                pageContent.classList.add('loaded');
+                
+                // Animate footer as a single unit
+                requestAnimationFrame(() => {
+                    footer.classList.add('loaded');
+                });
+            });
+        });
+
+        // Handle link clicks for smooth transitions
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (link && link.href && link.href.startsWith(window.location.origin)) {
+                e.preventDefault();
+                const loading = document.querySelector('.page-loading');
+                const pageContent = document.querySelector('.page-content');
+                const footer = document.querySelector('.site-footer');
+                
+                // Start the transition
+                loading.classList.add('active');
+                pageContent.classList.remove('loaded');
+                footer.classList.remove('loaded');
+                
+                // Wait for transition to complete before navigating
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); // matches var(--transition-medium) from CSS
+            }
+        });
+
+        initPageTransitions();
+    </script>
     <script src="js/components/navbar.js"></script>
     <script src="js/utils/animations.js"></script>
     <script src="js/main.js"></script>

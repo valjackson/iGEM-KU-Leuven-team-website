@@ -5,6 +5,9 @@
 @import "components/buttons.css";
 @import "components/cards.css";
 @import "components/navbar.css";
+@import "components/hero.css";
+@import "components/lottie.css";
+@import "components/loading.css";
 
 @import "layouts/footer.css";
 @import "layouts/header.css";
