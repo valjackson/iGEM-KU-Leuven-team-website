@@ -100,3 +100,49 @@
     line-height: 1.6;
     color: #333;
 }
+
+/* Our main partners section */
+.partners-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between images */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partner-image {
+    max-width: 200px; /* Adjust the size of the images */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.partner-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+.about-igem {
+    text-align: center; /* Centers the heading and content */
+    margin: 50px 0;
+}
+
+.partners-images {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Centers the images vertically */
+    gap: 20px; /* Space between images */
+    margin-top: 20px;
+}
+
+.partner-image {
+    max-width: 200px; /* Adjust the size of the images */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.partner-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
