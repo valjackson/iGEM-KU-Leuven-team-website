@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => notification.remove(), 400);
         });
 
-        // Auto hide after 5 seconds
+        // Auto hide
         setTimeout(() => {
             if (document.body.contains(notification)) {
                 notification.classList.remove('show');
                 setTimeout(() => notification.remove(), 400);
             }
-        }, 5000);
+        }, 6000);
     }
 
     if (form) {
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Send email using EmailJS
                 await emailjs.send(
-                    "service_qb4qpqa", // Replace with your EmailJS service ID
-                    "template_lsfiw75", // Replace with your EmailJS template ID
+                    "service_qb4qpqa", 
+                    "template_lsfiw75", 
                     {
                         name: form.name.value,
                         email: form.email.value,
