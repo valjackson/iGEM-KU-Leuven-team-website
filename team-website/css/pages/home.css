@@ -23,7 +23,6 @@ body {
 }
 
 .get-to-know-us h2 {
-    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
@@ -39,70 +38,96 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
+    max-width: 800px;
+    margin: 40px auto 0;
 }
 
 .circle-item {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    width: 150px;
+    cursor: pointer;
 }
 
 .circle-item img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    z-index: 1;
+    filter: brightness(40%);
+    transition: filter 0.3s ease;
 }
 
-.circle-item img:hover {
-    transform: scale(1.1);
+.circle-item:hover img {
+    filter: brightness(80%);
 }
 
 .circle-item p {
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--light-blue);
+    z-index: 2;
+    color: white;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 12px;
 }
-/* Flexbox layout for sections */
+
+
 .flex-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 50px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1000px;
+    margin-left: 200px;
+    margin-top: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .image-content {
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .igem-icon {
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
 }
 
 .text-content {
     flex: 2;
-    text-align: left;
+    text-align: center; /* Center the paragraphs within this block */
 }
 
 .text-content h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 3px solid var(--dark-blue);
+    padding-bottom: 5px;
 }
 
 .text-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: black;
+    margin: 10px 0;
 }
+
 
 /* Our main partners section */
 .partners-slider {
