@@ -1,4 +1,3 @@
-
 body {
     margin-top: 50px;
     min-height: 80vph;
@@ -107,26 +106,87 @@ body {
 }
 
 /* Our main partners section */
-.partners-images {
+.partners-slider {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin: 40px auto;
+    overflow: hidden;
+    background: white;
+}
+
+.slider-track {
     display: flex;
-    justify-content: center;
+    width: calc(200px * 14); /* Total width of all slides */
+    animation: scroll 30s linear infinite;
+}
+
+.slide {
+    width: 200px;
+    height: 150px;
+    display: flex;
     align-items: center;
-    gap: 20px; /* Space between images */
-    margin: 0 auto;
-    text-align: center;
+    justify-content: center;
+    padding: 15px;
 }
 
 .partner-image {
-    max-width: 200px; /* Adjust the size of the images */
-    height: auto;
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-    transition: transform 0.3s ease; /* Optional: Add hover effect */
+    max-width: 170px;
+    max-height: 120px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .partner-image:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 7)); /* Width of one set of slides */
+    }
+}
+
+/* Pause animation on hover */
+.partners-slider:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* Make the slider responsive */
+@media (max-width: 768px) {
+    .partners-slider {
+        height: 120px;
+    }
+    
+    .slide {
+        width: 160px;
+        height: 120px;
+    }
+    
+    .partner-image {
+        max-width: 140px;
+        max-height: 100px;
+    }
+    
+    .slider-track {
+        width: calc(160px * 14);
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-160px * 7));
+        }
+    }
+}
+
 .about-igem {
     text-align: center; /* Centers the heading and content */
     margin: 50px 0;
