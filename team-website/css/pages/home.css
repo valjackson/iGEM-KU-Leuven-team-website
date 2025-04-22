@@ -16,3 +16,138 @@ body {
     margin-left: 100px;
     margin-right: 100px;
 }
+
+/* Get to know us Section */
+.get-to-know-us {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.get-to-know-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 30px;
+    border: none;
+}
+
+.circle-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+}
+
+.circle-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.circle-item img:hover {
+    transform: scale(1.1);
+}
+
+.circle-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+/* Flexbox layout for sections */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.image-content {
+    flex: 1;
+    text-align: center;
+}
+
+.igem-icon {
+    max-width: 150px;
+    height: auto;
+}
+
+.text-content {
+    flex: 2;
+    text-align: left;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Our main partners section */
+.partners-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between images */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.partner-image {
+    max-width: 200px; /* Adjust the size of the images */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.partner-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+.about-igem {
+    text-align: center; /* Centers the heading and content */
+    margin: 50px 0;
+}
+
+.partners-images {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Centers the images vertically */
+    gap: 20px; /* Space between images */
+    margin-top: 20px;
+}
+
+.partner-image {
+    max-width: 200px; /* Adjust the size of the images */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.partner-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
