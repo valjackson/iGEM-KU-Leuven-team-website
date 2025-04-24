@@ -92,8 +92,8 @@ body {
 
 /* CARD IMAGE */
 .card-image {
-    width: 100px;
-    height: 100px; /* Fixed from 400px to match other cards */
+    width: 120px;
+    height: 120px; /* Fixed from 400px to match other cards */
     border-radius: 5%;
     object-fit: cover;
     margin-bottom: 10px;
@@ -114,8 +114,8 @@ body {
 /* CARD CONTAINER AND FLIP ANIMATION */
 .card-container {
     perspective: 1000px;
-    width: 160px;
-    height: 270px;
+    width: 180px;
+    height: 320px;
 }
 
 .card {
