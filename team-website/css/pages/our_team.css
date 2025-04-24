@@ -115,7 +115,7 @@ body {
 .card-container {
     perspective: 1000px;
     width: 160px;
-    height: 310px;
+    height: 270px;
 }
 
 .card {
