@@ -6,13 +6,11 @@
 @import "components/cards.css";
 @import "components/navbar.css";
 @import "components/hero.css";
-@import "components/lottie.css";
 @import "components/loading.css";
 
 @import "layouts/footer.css";
 @import "layouts/header.css";
-@import "layouts/main.css";
 
 @import "pages/home.css";
-@import "pages/about.css";
 @import "pages/past_editions.css";
+@import "pages/our_team.css";

@@ -64,6 +64,19 @@
     background-color: white;
   }
 
+  /* Burger Animation */
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
   /* Mobile / Tablet */
   @media (max-width: 900px) {
     .burger {
@@ -91,3 +104,15 @@
       margin-top: 0.5rem;
     }
   }
+
+  /* Nav Link Animation */
+  @keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

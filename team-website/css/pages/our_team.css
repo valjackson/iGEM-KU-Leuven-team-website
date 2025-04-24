@@ -1,18 +1,293 @@
-
 body {
-    margin-top: 50px;
-    min-height: 80vph;
     margin: 0;
     padding: 0;
+    min-height: 80vh;
 }
 
-.title{
+.title {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--dark-blue);
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 100px 0 20px;
+}
+
+.team-section {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the section content */
+}
+
+.page-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-bottom: 40px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 28px;
+    margin: 2rem 0 1.5rem;
+    padding: 0 0 0.5rem;
+    font-weight: bold;
+    color: #004785;
+    border-bottom: 3px solid var(--light-blue);
+    width: calc(100% - 15rem); /* Account for card-wrapper padding */
+    text-align: left;
+}
+
+/* NAVIGATION */
+.team-nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 48px;
+    margin: 0 auto 32px;
+    padding: 0;
+    width: calc(100% - 15rem);
+    max-width: 1200px;
+}
+
+.team-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.team-nav a.active {
+    color: var(--light-blue);
+}
+
+/* CARD GRID */
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Keep cards left-aligned */
+    gap: 2rem;
+    width: min(1000px, calc(100% - 4rem)); /* Set max width and account for padding */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 0 2rem;
+}
+
+/* Ensure consistent card sizes across all sections */
+.team-section .card-wrapper {
+    margin-bottom: 4rem; /* Add space between sections */
+}
+
+/* Ensure cards have consistent spacing */
+.card-wrapper > * {
+    flex: 0 0 160px;
+    margin: 0; /* Reset any default margins */
+}
+
+/* CARD IMAGE */
+.card-image {
+    width: 100px;
+    height: 100px; /* Fixed from 400px to match other cards */
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* CARD TEXT */
+.card-name {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.card-role {
+    font-size: 0.9rem;
+    margin-top: 1px;
+    color: var(--light-blue);
+}
+
+/* CARD CONTAINER AND FLIP ANIMATION */
+.card-container {
+    perspective: 1000px;
+    width: 160px;
+    height: 270px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: var(--dark-blue);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-left: 0;
+} 
+
+.card-back {
+    background: var(--dark-blue);
+    color: white;
+    transform: rotateY(180deg);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.card-back p {
+    margin: 5px 0;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    width: 100%;
+}
+
+.card-back h3 {
+    font-size: 1.1rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.card-back strong {
+    display: inline;
+    margin-right: 2px;
+    color: var(--light-blue)
+}
+
+
+.card-back br {
+    display: none;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1200px) {
+    .card-wrapper > * {
+        flex: 0 0 150px;
+    }
+
+    .card-wrapper {
+        width: min(900px, calc(100% - 3rem));
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-wrapper > * {
+        flex: 0 0 140px;
+    }
+
+    .card-wrapper {
+        width: min(800px, calc(100% - 2rem));
+        gap: 1.25rem;
+    }
+
+    .card-image {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        margin: 80px 20px 20px;
+        font-size: 2rem;
+    }
+
+    .section-title {
+        width: calc(100% - 2rem);
+        margin: 1.5rem 0 1rem;
+    }
+
+    .card-wrapper > * {
+        flex: 0 0 130px;
+    }
+
+    .card-wrapper {
+        width: min(600px, calc(100% - 2rem));
+        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: flex-start; /* Ensure left alignment is maintained */
+    }
+
+    .card-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        margin: 60px 15px 15px;
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        width: calc(100% - 1.5rem);
+        margin: 1rem 0 0.75rem;
+    }
+
+    .card-wrapper {
+        width: calc(100% - 1rem);
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .card-wrapper > * {
+        flex: 0 0 120px;
+    }
+
+    .card-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-name {
+        font-size: 0.9rem;
+    }
+
+    .card-role {
+        font-size: 0.8rem;
+    }
 }

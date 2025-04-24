@@ -7,7 +7,7 @@
     background-color: var(--background-color);
     border-radius: var(--border-radius-md);
     box-shadow: var(--box-shadow-light);
-    overflow: hidden;
+    /* overflow: hidden; removed to allow 3D flip */
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -18,7 +18,7 @@
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 80%;
     object-fit: cover;
 }
 
@@ -37,14 +37,160 @@
 
 /* Card layouts */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.cards-container > * {
+    flex: 0 1 300px;
+    min-width: 0;
+}
+
+.cards-container, .card-wrapper, .card-container {
+    overflow: visible !important;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .cards-container {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* 3D Flip Card Styles for Team Page */
+.card-container {
+    perspective: 1000px;
+    position: relative;
+    width: 180px;
+    height: 270px;
+    margin: 0 auto;
+}
+
+/* Make sure volunteer and mentor cards match team cards */
+.team-section .card-container {
+    width: 180px;
+    height: 270px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-left: 0;
+}
+
+.card-front {
+    background: var(--dark-blue);
+    color: #fff;
+    transform: none;
+}
+
+.card-back {
+    background: var(--dark-blue);
+    color: #fff;
+    transform: rotateY(180deg);
+    border: none;
+}
+
+/* Enhanced Responsive Design */
+@media screen and (max-width: 1440px) {
+    .card-container {
+        width: 170px;
+        height: 260px;
+    }
+    
+    .card-content {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .card-container {
+        width: 160px;
+        height: 250px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card-container {
+        width: 150px;
+        height: 240px;
+    }
+    
+    .cards-container {
+        gap: var(--spacing-md);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        width: 140px;
+        height: 230px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .card-container {
+        width: 130px;
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        width: 120px;
+        height: 210px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--spacing-sm);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card-container {
+        width: 110px;
+        height: 200px;
     }
 }

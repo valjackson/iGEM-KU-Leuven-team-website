@@ -3,34 +3,38 @@
  * Handles mobile navigation functionality
  */
 
-
 function initNavbar() {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
     
-    if (burger) {
-        burger.addEventListener('click', () => {
-            // Toggle Nav
-            nav.classList.toggle('active');
-            
-            // Animate Links
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-            
-            // Burger Animation
-            burger.classList.toggle('toggle');
-        });
+    if (!burger || !nav) {
+        console.warn('Navbar elements not found');
+        return;
     }
+
+    // Toggle mobile menu
+    burger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Toggle Nav
+        nav.classList.toggle('active');
+        
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+        
+        // Burger Animation
+        burger.classList.toggle('toggle');
+    });
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', (event) => {
-        if (nav && nav.classList.contains('active') && 
+        if (nav.classList.contains('active') && 
             !nav.contains(event.target) && 
             !burger.contains(event.target)) {
             
@@ -56,10 +60,14 @@ function highlightCurrentPage() {
     
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage) {
+        if ((currentPage === 'index.html' && linkHref === 'index.html') ||
+            (currentPage !== 'index.html' && linkHref.includes(currentPage))) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
         }
     });
 }
+
+// Initialize navbar when DOM is loaded
+document.addEventListener('DOMContentLoaded', initNavbar);
