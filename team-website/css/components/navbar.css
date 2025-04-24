@@ -49,6 +49,39 @@
     color: var(--light-blue);
   }
 
+  /* Style for Press (non-link) to match nav links */
+  .nav-links .press-link-with-badge {
+    color: var(--text-color-light);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+    transition: color var(--transition-fast);
+    padding: 0;
+  }
+  .nav-links .press-link-with-badge:hover {
+    color: var(--light-blue);
+  }
+  /* Active style for Press if needed */
+  .nav-links .press-link-with-badge .active {
+    color: var(--light-blue);
+  }
+  /* Soon badge styling */
+  .soon-badge {
+    background: #205C94;
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 900;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-left: 6px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
   /* Burger Icon (hidden on desktop) */
   .burger {
     display: none;

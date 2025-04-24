@@ -9,7 +9,8 @@ body {
     font-weight: 800;
     color: var(--dark-blue);
     text-align: center;
-    margin: 100px 0 20px;
+    margin: 80px 0 0 0;
+    padding-top: 20px;
 }
 
 .team-section {
@@ -20,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the section content */
+    margin-top: 0;
 }
 
 .page-container {
@@ -31,12 +33,6 @@ body {
 }
 
 /* HEADER */
-.page-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--dark-blue);
-    margin-bottom: 40px;
-}
 
 /* SECTION TITLE */
 .section-title {
@@ -44,7 +40,7 @@ body {
     margin: 2rem 0 1.5rem;
     padding: 0 0 0.5rem;
     font-weight: bold;
-    color: #004785;
+    color: var(--dark-blue);
     border-bottom: 3px solid var(--light-blue);
     width: calc(100% - 15rem); /* Account for card-wrapper padding */
     text-align: left;

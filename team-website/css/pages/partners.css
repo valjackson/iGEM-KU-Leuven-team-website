@@ -4,6 +4,11 @@ body {
   background-color: #ffffff;
 }
 
+.title{
+  padding-bottom: 50px;
+}
+
+
 .partners-section {
   max-width: 100%;
   padding-bottom: 0;
@@ -23,7 +28,7 @@ body {
 
 .partner-category {
   flex: 1 1 300px;
-  max-width: 400px;
+  max-width: 600px;
   padding: 2rem;
   border-radius: 30px;
   background: #fdfdfd;
@@ -40,8 +45,8 @@ body {
 
 .partner-category h3 {
   font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -50,7 +55,7 @@ body {
 }
 
 .tier-badge {
-  font-size: 0.75rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding: 0.3rem 0.75rem;
   border-radius: 999px;

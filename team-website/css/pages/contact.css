@@ -13,7 +13,7 @@
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -361,7 +361,7 @@
 }
 
 .team-contact-card h3 {
-    color: #003F7E;
+    color: var(--dark-blue);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }

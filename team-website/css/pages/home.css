@@ -10,9 +10,10 @@ body {
     font-weight: 800;
     color: var(--dark-blue);
     text-align: center;
-    padding: 90px;
-    margin-bottom: 15px;
+    padding-left: 80px;
+    padding-right: 80px;
     margin-top: 30px;
+    padding-bottom: 0;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -20,18 +21,18 @@ body {
 /* Get to know us Section */
 .get-to-know-us {
     text-align: center;
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .get-to-know-us h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .section-divider {
     width: 50px;
     height: 3px;
     background-color: var(--dark-blue);
-    margin: 10px auto 30px;
+    margin: 5px auto 20px;
     border: none;
 }
 
@@ -130,20 +131,22 @@ body {
 .text-content {
     flex: 2;
     text-align: center; /* Center the paragraphs within this block */
+    padding-top: 10px;
 }
 
 .text-content h2 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: inline-block;
     border-bottom: 3px solid var(--dark-blue);
     padding-bottom: 5px;
+    padding-top: 15px;
 }
 
 .text-content p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: black;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 
