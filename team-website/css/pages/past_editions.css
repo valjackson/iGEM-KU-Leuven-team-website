@@ -181,3 +181,34 @@
     max-height: 130px; /* Increased from 100px */
   }
 }
+
+/* --- Widen timeline on large screens --- */
+@media screen and (min-width: 1200px) {
+  .timeline-container {
+    max-width: 2000px;
+  }
+  .timeline {
+    padding-left: 300px;
+    margin-left: 50px;
+  }
+  .timeline::before {
+    left: 320px;
+  }
+  .timeline-year {
+    left: -160px;
+    font-size: 2rem;
+  }
+  .timeline-content {
+    margin-left: 60px;
+    padding: 35px;
+  }
+  .timeline-content .logo {
+    width: 320px;
+    min-width: 320px;
+    padding-left: 50px;
+  }
+  .timeline-content .logo img {
+    max-width: 280px;
+    max-height: 180px;
+  }
+}
