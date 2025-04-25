@@ -399,3 +399,24 @@
         max-width: 400px;
     }
 }
+
+.contact-intro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-content.loaded .contact-intro {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-intro p {
+    font-size: 1.2rem;
+    color: rgb(134, 134, 134);
+    font-weight: 600;
+}
