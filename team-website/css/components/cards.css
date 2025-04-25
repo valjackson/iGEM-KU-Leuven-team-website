@@ -40,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: 10px;
     padding: 0 var(--spacing-md);
 }
 
@@ -64,15 +64,15 @@
 .card-container {
     perspective: 1000px;
     position: relative;
-    width: 180px;
-    height: 270px;
+    width: 280px;
+    height: 330px;
     margin: 0 auto;
 }
 
 /* Make sure volunteer and mentor cards match team cards */
 .team-section .card-container {
-    width: 180px;
-    height: 270px;
+    width: 280px;
+    height: 330px;
 }
 
 .card {

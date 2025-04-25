@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     setupCardFlip();
     setupTeamFilter();
+    setupTeamNavToggle();
 });
 
 function setupCardFlip() {
@@ -80,5 +81,31 @@ function setupTeamFilter() {
                 }, 300);
             }
         });
+    });
+}
+
+function setupTeamNavToggle() {
+    const toggle = document.querySelector('.team-nav-toggle');
+    const nav = document.querySelector('.team-nav');
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('open');
+    });
+
+    // Close nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) return;
+        if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('open');
+        }
+    });
+
+    // Optional: close nav on resize to large screens
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            nav.classList.remove('open');
+        }
     });
 }

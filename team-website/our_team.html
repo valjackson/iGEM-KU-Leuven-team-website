@@ -67,17 +67,23 @@
 
         <section class="team-section">
             <h2 class="section-title">Members</h2>
-            <nav class="team-nav">
-              <a class="active">All Team</a>
-              <a>Wet Lab</a>
-              <a>Dry Lab</a>
-              <a>Finance</a>
-              <a>Marketing</a>
-              <a>Wiki</a>
-              <a>Outreach</a>
-              <a>Social Committee</a>
+            <nav class="team-nav-wrapper">
+              <button class="team-nav-toggle" aria-label="Toggle team navigation">
+                <span class="team-nav-toggle-bar"></span>
+                <span class="team-nav-toggle-bar"></span>
+                <span class="team-nav-toggle-bar"></span>
+              </button>
+              <div class="team-nav">
+                <a class="active">All Team</a>
+                <a>Wet Lab</a>
+                <a>Dry Lab</a>
+                <a>Finance</a>
+                <a>Marketing</a>
+                <a>Wiki</a>
+                <a>Outreach</a>
+                <a>Social Committee</a>
+              </div>
             </nav>
-
             <div class="card-wrapper">
               <!-- Niels Card -->
               <div class="card-container">
@@ -110,7 +116,7 @@
                     <p><strong>Nationality:</strong> Indian</p>
                     <p><strong>University:</strong> KU Leuven</p>
                     <p><strong>Subteams:</strong> Team Vice-captain, Dry Lab, Wet Lab, Finance, Outreach, Marketing, Wiki, Social Committee</p>
-                    <p><strong>Fun fact:</strong> I can speak and understand multiple Indian languages, even Sanskrit to some extent</p>
+                    <p><strong>Fun fact:</strong> I can speak and understand multiple Indian languages</p>
                   </div>
                 </div>
               </div>
@@ -200,7 +206,7 @@
                     <p><strong>Nationality:</strong> Indian</p>
                     <p><strong>University:</strong> Vrije Universiteit Brussel (VUB) </p>
                     <p><strong>Subteams:</strong> Wet Lab, Dry Lab, Outreach, Marketing, Social Committee</p>
-                    <p><strong>Fun fact:</strong> I live with a roomate who has a cute little tail and sparkling eyes (belgian rat problems)</p>
+                    <p><strong>Fun fact:</strong> My roomate has a cute little tail and sparkling eyes (a rat)</p>
                   </div>
                 </div>
               </div>
@@ -272,7 +278,7 @@
                     <p><strong>Nationality:</strong> Indian</p>
                     <p><strong>University:</strong> Vrije Universiteit Brussel (VUB) </p>
                     <p><strong>Subteams:</strong> Dry Lab, Wet Lab, Outreach, Marketing, Wiki, Social Commitee</p>
-                    <p><strong>Fun fact:</strong> I have an unhealthy obsession for mint milk chocolate chip icecream!</p>
+                    <p><strong>Fun fact:</strong> I have an obsession for mint milk chocolate chip icecream!</p>
                   </div>
                 </div>
               </div>
@@ -434,56 +440,14 @@
 
     <!-- JavaScript imports -->
     <script src="js/utils/pageTransition.js"></script>
-    <script>
-        // Add page transition handling
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initial page load
-            const loading = document.querySelector('.page-loading');
-            const pageContent = document.querySelector('.page-content');
-            const footer = document.querySelector('.site-footer');
-            
-            // Show loading screen initially
-            loading.classList.add('active');
-
-            // When everything is loaded
-            window.addEventListener('load', () => {
-                // Hide loading screen and show content
-                loading.classList.remove('active');
-                pageContent.classList.add('loaded');
-                
-                // Animate footer as a single unit
-                requestAnimationFrame(() => {
-                    footer.classList.add('loaded');
-                });
-            });
-        });
-
-        // Handle link clicks for smooth transitions
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link && link.href && link.href.startsWith(window.location.origin)) {
-                e.preventDefault();
-                const loading = document.querySelector('.page-loading');
-                const pageContent = document.querySelector('.page-content');
-                const footer = document.querySelector('.site-footer');
-                
-                // Start the transition
-                loading.classList.add('active');
-                pageContent.classList.remove('loaded');
-                footer.classList.remove('loaded');
-                
-                // Wait for transition to complete before navigating
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 500); // matches var(--transition-medium) from CSS
-            }
-        });
-
-        initPageTransitions();
-    </script>
     <script src="js/components/navbar.js"></script>
     <script src="js/utils/animations.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/team.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initPageTransitions();
+        });
+    </script>
 </body>
 </html>

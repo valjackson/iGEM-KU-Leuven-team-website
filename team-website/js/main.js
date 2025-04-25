@@ -4,10 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Initialize all components
-    initNavbar();
-    
     // Initialize page-specific functionality
     const currentPage = getCurrentPage();
     initPageSpecific(currentPage);

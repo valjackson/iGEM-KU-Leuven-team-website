@@ -151,56 +151,14 @@
 
     <!-- JavaScript imports -->
     <script src="js/utils/pageTransition.js"></script>
-    <script>
-        // Add page transition handling
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initial page load
-            const loading = document.querySelector('.page-loading');
-            const pageContent = document.querySelector('.page-content');
-            const footer = document.querySelector('.site-footer');
-            
-            // Show loading screen initially
-            loading.classList.add('active');
-
-            // When everything is loaded
-            window.addEventListener('load', () => {
-                // Hide loading screen and show content
-                loading.classList.remove('active');
-                pageContent.classList.add('loaded');
-                
-                // Animate footer as a single unit
-                requestAnimationFrame(() => {
-                    footer.classList.add('loaded');
-                });
-            });
-        });
-
-        // Handle link clicks for smooth transitions
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link && link.href && link.href.startsWith(window.location.origin)) {
-                e.preventDefault();
-                const loading = document.querySelector('.page-loading');
-                const pageContent = document.querySelector('.page-content');
-                const footer = document.querySelector('.site-footer');
-                
-                // Start the transition
-                loading.classList.add('active');
-                pageContent.classList.remove('loaded');
-                footer.classList.remove('loaded');
-                
-                // Wait for transition to complete before navigating
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 500); // matches var(--transition-medium) from CSS
-            }
-        });
-
-        initPageTransitions();
-    </script>
     <script src="js/components/navbar.js"></script>
     <script src="js/utils/animations.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initPageTransitions();
+        });
+    </script>
 </body>
 </html>

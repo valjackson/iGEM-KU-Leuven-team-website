@@ -37,7 +37,7 @@
                         <li><a href="our_team.html">Our Team</a></li>
                         <li><a href="partners.html" class="active">Partners</a></li>
                         <li><a href="past_editions.html">Past Editions</a></li>
-                        <li><a href="press.html">Press</a></li>
+                        <li><span class="press-link-with-badge">Press <span class="soon-badge">Soon</span></span></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -60,7 +60,7 @@
 
             <section>
                 <div class="content">
-                    <h1 class="title">MEET OUR PARTNERS</h1>
+                    <h1 class="title-partners">MEET OUR PARTNERS</h1>
                 </div>
             </section>
         </div>
@@ -70,7 +70,7 @@
           
               <!-- Gold Tier -->
               <div class="partner-category gold-tier">
-                <h3><span class="tier-badge gold">Gold</span></h3>
+                <h3><span class="tier-badge gold">Gold Cell</span></h3>
                 <div class="partner-logos">
                   <div class="partner-logo" data-partner="kul-wt">
                     <img src="./assets/images/partners/ku_leuven_w&t.jpg" alt="KU Leuven Group W&T" />
@@ -86,7 +86,7 @@
           
               <!-- Silver Tier -->
               <div class="partner-category silver-tier">
-                <h3><span class="tier-badge silver">Silver</span></h3>
+                <h3><span class="tier-badge silver">Silver Cell</span></h3>
                 <div class="partner-logos">
                   <div class="partner-logo" data-partner="snapgene">
                     <img src="./assets/images/partners/snap_gene.png" alt="SnapGene" />
@@ -96,7 +96,7 @@
           
               <!-- Bronze Tier -->
               <div class="partner-category bronze-tier">
-                <h3><span class="tier-badge bronze">Bronze</span></h3>
+                <h3><span class="tier-badge bronze">Bronze Cell</span></h3>
                 <div class="partner-logos">
                   <div class="partner-logo" data-partner="technovation">
                     <img src="./assets/images/partners/technovation_hub.png" alt="TechnovationHub" />
@@ -160,56 +160,15 @@
 
     <!-- JavaScript imports -->
     <script src="js/utils/pageTransition.js"></script>
-    <script>
-        // Add page transition handling
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initial page load
-            const loading = document.querySelector('.page-loading');
-            const pageContent = document.querySelector('.page-content');
-            const footer = document.querySelector('.site-footer');
-            
-            // Show loading screen initially
-            loading.classList.add('active');
-
-            // When everything is loaded
-            window.addEventListener('load', () => {
-                // Hide loading screen and show content
-                loading.classList.remove('active');
-                pageContent.classList.add('loaded');
-                
-                // Animate footer as a single unit
-                requestAnimationFrame(() => {
-                    footer.classList.add('loaded');
-                });
-            });
-        });
-
-        // Handle link clicks for smooth transitions
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link && link.href && link.href.startsWith(window.location.origin)) {
-                e.preventDefault();
-                const loading = document.querySelector('.page-loading');
-                const pageContent = document.querySelector('.page-content');
-                const footer = document.querySelector('.site-footer');
-                
-                // Start the transition
-                loading.classList.add('active');
-                pageContent.classList.remove('loaded');
-                footer.classList.remove('loaded');
-                
-                // Wait for transition to complete before navigating
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 500); // matches var(--transition-medium) from CSS
-            }
-        });
-        initPageTransitions();
-    </script>
     <script src="js/components/navbar.js"></script>
     <script src="js/utils/animations.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/partners.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initPageTransitions();
+        });
+    </script>
 </body>
 
 </html>

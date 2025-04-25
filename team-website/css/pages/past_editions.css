@@ -1,7 +1,30 @@
+/* Ensure timeline never overlaps navbar */
+.timeline,
+.timeline-item,
+.timeline-content,
+.timeline-year,
+.timeline-wrapper,
+.timeline-container {
+  z-index: 0 !important;
+}
+
+/* Add these at the top of the file */
+.page-container {
+  position: relative;
+  z-index: 1;
+}
+
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
 /* --- Container --- */
 .timeline-container {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .timeline-container h1 {
   text-align: center;
@@ -16,6 +39,7 @@
   padding: 40px 20px;
   opacity: 0;
   transition: opacity 0.5s ease-out;
+  z-index: 1;
 }
 
 .timeline-wrapper.loaded {
@@ -38,7 +62,7 @@
   height: 100%;
   width: 3px;
   background-color: var(--dark-blue);
-  z-index: 2;
+  z-index: 1;
 }
 
 /* --- Each item --- */
@@ -49,6 +73,7 @@
   opacity: 0;  /* Start hidden for animation */
   transform: translateY(20px);  /* Start slightly below for animation */
   transition: all 0.5s ease-out;
+  z-index: 1;
 }
 
 .timeline-item.visible {
@@ -62,7 +87,7 @@
   top: 1.3rem;  /* Aligned with h2 */
   font-size: 1.7rem;
   color: var(--dark-blue);
-  z-index: 3;
+  z-index: 1;
   font-family: 'Rubik', sans-serif;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -81,6 +106,7 @@
   justify-content: space-between;
   margin-left: 30px;  /* Space for the line */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1;
 }
 .timeline-content .desc {
   max-width: 65%;  /* Slightly wider description */

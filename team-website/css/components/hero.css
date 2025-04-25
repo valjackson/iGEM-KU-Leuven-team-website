@@ -2,12 +2,15 @@
     position: relative;
     margin-top: var(--navbar-height);
     width: 100%;
+    z-index: 1;
   }
   
   .hero img {
     width: 100%;
     height: auto;
     display: block;
+    position: relative;
+    z-index: 1;
   }
   
   .lottie-overlay {
@@ -15,7 +18,7 @@
     top: 70%;
     left: 20%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;

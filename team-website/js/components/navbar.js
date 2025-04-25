@@ -24,7 +24,7 @@ function initNavbar() {
             if (link.style.animation) {
                 link.style.animation = '';
             } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                link.style.animation = `navLinkFade 0.3s ease forwards ${index * 0.1}s`;
             }
         });
         
@@ -37,23 +37,20 @@ function initNavbar() {
         if (nav.classList.contains('active') && 
             !nav.contains(event.target) && 
             !burger.contains(event.target)) {
-            
             nav.classList.remove('active');
             burger.classList.remove('toggle');
             
+            // Reset animations when closing
             navLinks.forEach(link => {
                 link.style.animation = '';
             });
         }
     });
-    
+
     // Highlight current page in navigation
     highlightCurrentPage();
 }
 
-/**
- * Adds 'active' class to the navigation link of the current page
- */
 function highlightCurrentPage() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -61,7 +58,7 @@ function highlightCurrentPage() {
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         if ((currentPage === 'index.html' && linkHref === 'index.html') ||
-            (currentPage !== 'index.html' && linkHref.includes(currentPage))) {
+            (currentPage !== 'index.html' && linkHref && linkHref.includes(currentPage))) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');

@@ -17,7 +17,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1.5rem;
-    z-index: 1000;
+    z-index: 100000;
+    isolation: isolate;
     flex-wrap: nowrap;
   }
 
@@ -95,6 +96,7 @@
     width: 25px;
     height: 3px;
     background-color: white;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
   }
 
   /* Burger Animation */
@@ -114,38 +116,50 @@
   @media (max-width: 900px) {
     .burger {
       display: flex;
+      z-index: 10000;
     }
     .nav-links {
       display: none;
-      position: absolute;
-      top: 100%; /* directly under header */
+      position: fixed;
+      top: var(--navbar-height);
       left: 0;
       width: 100%;
       flex-direction: column;
       background-color: var(--dark-blue);
       padding: 1rem 0;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+      z-index: 9998;
     }
     .nav-links.active {
       display: flex;
+      opacity: 1;
+      transform: translateY(0);
     }
     /* Center text in mobile menu */
     .nav-links li {
       width: 100%;
       text-align: center;
     }
+    .nav-links li a {
+      display: inline-block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
     .nav-links li + li {
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
     }
   }
 
   /* Nav Link Animation */
   @keyframes navLinkFade {
     from {
-        opacity: 0;
-        transform: translateX(50px);
+      opacity: 0;
+      transform: translateX(50px);
     }
     to {
-        opacity: 1;
-        transform: translateX(0);
+      opacity: 1;
+      transform: translateX(0);
     }
-}
+  }

@@ -47,6 +47,37 @@ body {
 }
 
 /* NAVIGATION */
+.team-nav-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.team-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.team-nav-toggle-bar {
+    width: 28px;
+    height: 4px;
+    background: var(--dark-blue, #003F7E);
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
 .team-nav {
     display: flex;
     justify-content: flex-start;
@@ -72,8 +103,8 @@ body {
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Keep cards left-aligned */
-    gap: 2rem;
+    justify-content: center; /* Keep cards left-aligned */
+    gap: 1rem;
     width: min(1000px, calc(100% - 4rem)); /* Set max width and account for padding */
     margin: 0 auto; /* Center the wrapper */
     padding: 0 2rem;
@@ -115,7 +146,7 @@ body {
 .card-container {
     perspective: 1000px;
     width: 180px;
-    height: 320px;
+    height: 600px;
 }
 
 .card {
@@ -250,6 +281,69 @@ body {
     .card-image {
         width: 80px;
         height: 80px;
+    }
+
+    .team-nav-toggle {
+        display: flex;
+    }
+    .team-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100vw;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1rem 0.5rem;
+        z-index: 1;
+        gap: 0.5rem;
+    }
+    .team-nav.open {
+        display: flex;
+    }
+    .team-nav a {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        width: 100%;
+        text-align: left;
+    }
+    .team-nav-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .team-nav-toggle {
+        display: flex;
+        margin-bottom: 0.5rem;
+        align-self: center;
+    }
+    .team-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100vw;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1rem 0.5rem;
+        z-index: 1;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .team-nav.open {
+        display: flex;
+    }
+    .team-nav a {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        width: 100%;
+        text-align: left;
     }
 }
 

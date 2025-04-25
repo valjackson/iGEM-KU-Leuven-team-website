@@ -1,35 +1,23 @@
 function initPageTransitions() {
     // Initial page load
-    document.addEventListener('DOMContentLoaded', () => {
-        const loading = document.querySelector('.page-loading');
-        const pageContent = document.querySelector('.page-content');
-        const footer = document.querySelector('.site-footer');
-        
-        // Show loading screen initially
-        loading.classList.add('active');
+    const loading = document.querySelector('.page-loading');
+    const pageContent = document.querySelector('.page-content');
+    const footer = document.querySelector('.site-footer');
+    const nav = document.querySelector('.nav-links');
+    const burger = document.querySelector('.burger');
+    
+    // Show loading screen initially
+    loading.classList.add('active');
 
-        // When everything is loaded
-        window.addEventListener('load', () => {
-            const loading = document.querySelector('.page-loading');
-            const pageContent = document.querySelector('.page-content');
-            const footer = document.querySelector('.site-footer');
-            const timeline = document.querySelector('.timeline-wrapper');
-            
-            // Hide loading screen and show content
-            loading.classList.remove('active');
-            pageContent.classList.add('loaded');
-            
-            // Show timeline if it exists
-            if (timeline) {
-                setTimeout(() => {
-                    timeline.classList.add('loaded');
-                }, 300); // Slight delay after main content loads
-            }
-            
-            // Animate footer
-            requestAnimationFrame(() => {
-                footer.classList.add('loaded');
-            });
+    // When everything is loaded
+    window.addEventListener('load', () => {
+        // Hide loading screen and show content
+        loading.classList.remove('active');
+        pageContent.classList.add('loaded');
+        
+        // Animate footer as a single unit
+        requestAnimationFrame(() => {
+            footer.classList.add('loaded');
         });
     });
 
@@ -38,23 +26,22 @@ function initPageTransitions() {
         const link = e.target.closest('a');
         if (link && link.href && link.href.startsWith(window.location.origin)) {
             e.preventDefault();
-            const loading = document.querySelector('.page-loading');
-            const pageContent = document.querySelector('.page-content');
-            const footer = document.querySelector('.site-footer');
-            const timeline = document.querySelector('.timeline-wrapper');
+            
+            // Close mobile menu if it's open
+            if (nav && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
             
             // Start the transition
             loading.classList.add('active');
             pageContent.classList.remove('loaded');
             footer.classList.remove('loaded');
-            if (timeline) {
-                timeline.classList.remove('loaded');
-            }
             
-            // Wait for transition to complete before navigating
+            // Navigate to the new page
             setTimeout(() => {
                 window.location.href = link.href;
-            }, 500); // matches var(--transition-medium) from CSS
+            }, 300);
         }
     });
 }
