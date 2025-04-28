@@ -121,6 +121,7 @@
 .timeline-content p {
   margin-bottom: 12px;
   font-size: 0.95rem;
+  text-align: justify; /* Added to justify text */
 }
 .timeline-content a {
   color: var(--light-blue);
