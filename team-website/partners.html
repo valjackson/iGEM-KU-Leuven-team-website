@@ -7,7 +7,7 @@
     <title>iGEM KU Leuven - Partners</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="../team-website/assets/icons/iGEM_logo_favicon.ico" type="image-x-icon">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -124,6 +124,27 @@
             </div>
           </section>
 
+          <section class="wtb-partner-section">
+            <div class="content">
+                <h1 class="title-partners">WANT TO BECOME A PARTNER?</h1>
+                <p>We are looking for organizations, companies, and institutions passionate about making a real 
+                  impact in the world of synthetic biology and beyond. As a partner, 
+                  you'll get the opportunity to collaborate with bright minds, contribute to cutting-edge research,
+                   and gain visibility within the iGEM and KU Leuven communities.</p>
+                <h3>Interested in making it happen?</h3>
+
+                <div class="contact-card">
+                  <h4>Contact Our Finance Team</h4>
+                  <p>Email us for partnership opportunities:</p>
+                  <a href="mailto:finance@igemleuven.be">finance@igemleuven.be</a>
+                </div>
+
+                <!-- Learn More Button placed inside the section -->
+                <div class="learn-more">
+                    <button class="learn-more-btn" onclick="openBrochureModal()">Learn More</button>
+                </div>
+            </div>
+          </section>
 
         <footer class="site-footer">
             <div class="wave-wrapper">
@@ -160,6 +181,19 @@
         </footer>          
     </div>
 
+    <!-- Add Back Modal for Brochure -->
+    <div id="brochureModal" class="partner-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Partnership Brochure</h4>
+                <button class="close-modal" onclick="closeBrochureModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="./assets/partners_flyer.png" alt="Partnership Brochure" class="modal-image">
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript imports -->
     <script src="js/utils/pageTransition.js"></script>
     <script src="js/components/navbar.js"></script>
@@ -170,6 +204,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             initPageTransitions();
         });
+
+        function openBrochureModal() {
+            document.getElementById('brochureModal').classList.add('active');
+        }
+
+        function closeBrochureModal() {
+            document.getElementById('brochureModal').classList.remove('active');
+        }
     </script>
 </body>
 
