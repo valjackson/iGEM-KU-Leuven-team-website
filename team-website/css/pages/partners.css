@@ -187,7 +187,6 @@ body {
   background-color: var(--dark-blue);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -354,6 +353,7 @@ body {
     transition: background-color 0.3s ease;
     cursor: pointer;
     visibility: visible;
+    border: none;
 }
 
 .learn-more-btn:hover {
