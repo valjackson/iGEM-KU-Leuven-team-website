@@ -144,6 +144,11 @@
   object-fit: contain;
   margin: 0 auto; /* Better centering */
 }
+
+.learn-more{
+  text-align: left;
+}
+
 /* --- Responsive tweak --- */
 @media screen and (max-width: 600px) {
   .timeline { 
