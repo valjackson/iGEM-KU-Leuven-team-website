@@ -272,16 +272,32 @@ body {
   
     .column-box {
       padding: 40px 30px;
+      text-align: center;
+      align-items: center; /* Center icons and text on small screens */
+    }
+    
+    .column-box h2 {
+      text-align: center; /* Center headings on small screens */
+    }
+    
+    .column-box p {
+      text-align: center; /* Center paragraph text on small screens */
+    }
+    
+    .column-icon {
+      align-self: center; /* Center icons on small screens */
     }
   
     .partners-slider {
       height: 120px;
+      -webkit-overflow-scrolling: touch; /* Enable smooth touch scrolling */
     }
   
     .slider-track {
       /* Remove gap property for seamless loop */
       gap: 60px;
       width: calc((200px + 60px) * 14);
+      animation: none; /* Disable auto-scrolling on mobile */
     }
   
     .slide {

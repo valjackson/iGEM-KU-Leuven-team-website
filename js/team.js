@@ -81,6 +81,11 @@ function setupTeamFilter() {
                 }, 300);
             }
         });
+
+        // After filtering cards, close nav on mobile
+        if (window.innerWidth <= 768) {
+            teamNav.classList.remove('open');
+        }
     });
 }
 

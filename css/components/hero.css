@@ -55,12 +55,12 @@
   }
   
   .lottie-scaler {
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 200px;
   }
 
   .logo-overlay {
-    max-width: 80px;
+    max-width: 70px;
   }
 }
 
@@ -71,12 +71,12 @@
   }
   
   .lottie-scaler {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
   }
 
   .logo-overlay {
-    max-width: 60px;
+    max-width: 50px;
     margin-top: -20px;
   }
 }
@@ -88,12 +88,12 @@
   }
   
   .lottie-scaler {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   .logo-overlay {
-    max-width: 50px;
-    margin-top: -15px;
+    max-width: 40px;
+    margin-top: -10px;
   }
 }

@@ -83,7 +83,7 @@
 
 .timeline-year {
   position: absolute;
-  left: -90px;  /* Adjusted position */
+  left: -110px;  /* increased negative offset to provide more space before the line */
   top: 1.3rem;  /* Aligned with h2 */
   font-size: 1.7rem;
   color: var(--dark-blue);
@@ -151,24 +151,23 @@
 
 /* --- Responsive tweak --- */
 @media screen and (max-width: 600px) {
+  .timeline-container {
+    overflow-x: auto;
+    padding: 0 10px;
+    padding-left: 100px; /* Added so the negative .timeline-year is visible */
+  }
   .timeline { 
-    padding-left: 100px;
-    margin-left: 10px;
+    padding-left: 50px; /* Reduced padding for mobile */
+    margin-left: 0;
   }
   .timeline::before {
-    left: 70px;
-    height: calc(100% - 40px);  /* Slightly reduced for mobile spacing */
+    left: 35px; /* Adjusted line position */
+    height: calc(100% - 20px);
   }
   .timeline-item { 
     flex-direction: column;
   }
-  .timeline-year {
-    left: -90px;
-    font-size: 1.2rem;
-    top: 1.7rem;
-  }
-
-  
+  /* Removed .timeline-year overrides to preserve original alignment */
   .timeline-content { 
     flex-direction: column;
     margin-left: 20px;
@@ -201,7 +200,7 @@
     left: 320px;
   }
   .timeline-year {
-    left: -160px;
+    left: -180px; /* increased negative offset for more space before the line */
     font-size: 2rem;
   }
   .timeline-content {
