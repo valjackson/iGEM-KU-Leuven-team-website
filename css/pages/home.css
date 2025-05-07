@@ -165,13 +165,12 @@ body {
     width: 100%;
     height: 150px;
     margin: 20px auto 60px;
-    overflow-x: auto; /* Enable horizontal scroll */
+    overflow-x: hidden; /* hide overflow for endless CSS animation */
     overflow-y: hidden;
-    background: white;
-    cursor: grab; /* Indicate draggable */
+    cursor: default;
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
-    /* Removed opacity and pointer-events to keep gallery visible */
+    scroll-snap-type: x mandatory;    /* enable snap points */
   }
   
   .partners-slider:active {
@@ -185,9 +184,11 @@ body {
   .slider-track {
     display: flex;
     /* Remove gap property for seamless loop */
-    width: calc((250px + 80px) * 14);
-    animation: scroll 30s linear infinite;
+    width: max-content;            /* adapt to content width */
+    animation: scroll 40s linear infinite;  /* restore continuous loop */
     align-items: center;
+    will-change: transform;            /* hint for smoother rendering */
+    transform: translateZ(0);         /* force hardware acceleration */
   }
   
   .slide {
@@ -198,6 +199,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 80px; /* Use margin instead of gap */
+    scroll-snap-align: start;         /* snap each slide */
   }
   
   .slide:last-child {
@@ -219,12 +221,8 @@ body {
   }
   
   @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc((-250px - 80px) * 7));
-    }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }  /* shift by half the track width for one loop */
   }
   
   .partners-slider:hover .slider-track {
@@ -287,26 +285,11 @@ body {
     .column-icon {
       align-self: center; /* Center icons on small screens */
     }
-  
+
     .partners-slider {
-      height: 120px;
-      -webkit-overflow-scrolling: touch; /* Enable smooth touch scrolling */
-    }
-  
-    .slider-track {
-      /* Remove gap property for seamless loop */
-      gap: 60px;
-      width: calc((200px + 60px) * 14);
-      animation: none; /* Disable auto-scrolling on mobile */
-    }
-  
-    .slide {
-      width: 200px;
-      height: 120px;
-      margin-right: 60px;
-    }
-  
-    .slide:last-child {
-      margin-right: 0;
+      overflow-x: auto;
+      cursor: grab;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
   }

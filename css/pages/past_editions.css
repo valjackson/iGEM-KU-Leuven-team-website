@@ -152,25 +152,27 @@
 /* --- Responsive tweak --- */
 @media screen and (max-width: 600px) {
   .timeline-container {
-    overflow-x: auto;
-    padding: 0 10px;
-    padding-left: 100px; /* Added so the negative .timeline-year is visible */
+    overflow-x: visible; /* allow full width without scroll */
+    padding: 0 10px;     /* remove extra left padding */
   }
   .timeline { 
-    padding-left: 50px; /* Reduced padding for mobile */
-    margin-left: 0;
+    padding-left: 0;      /* remove left padding */
   }
   .timeline::before {
-    left: 35px; /* Adjusted line position */
-    height: calc(100% - 20px);
+    display: none;        /* hide vertical line on small screens */
   }
   .timeline-item { 
     flex-direction: column;
   }
-  /* Removed .timeline-year overrides to preserve original alignment */
+  .timeline-year {
+    position: relative;   /* make year flow inline */
+    left: 0;
+    top: auto;
+    margin-bottom: 10px;
+  }
   .timeline-content { 
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 0;       /* full-width content box */
   }
   .timeline-content .desc { 
     max-width: 100%;
