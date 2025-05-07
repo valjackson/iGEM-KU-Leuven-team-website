@@ -83,7 +83,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 48px;
+    gap: 20px;
     margin: 0 auto 32px;
     padding: 0;
     width: 100%;
@@ -377,7 +377,7 @@ body {
     }
 
     .card-wrapper > * {
-        flex: 0 0 120px;
+        flex: 0 0 160px;
     }
 
     .card-image {
