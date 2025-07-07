@@ -49,6 +49,13 @@ body {
   max-width: 600px;
 }
 
+/* Gold Tier: larger logos */
+.partner-category.gold-tier .partner-logo {
+  width: 400px;
+  height: 150px;
+  padding: 1rem;
+}
+
 .partner-category h3 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -379,3 +386,16 @@ body {
   height: auto;
   min-height: 60px;
 }
+
+/* Bronze Tier: two columns and smaller logos */
+.partner-category.bronze-tier .partner-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.partner-category.bronze-tier .partner-logo {
+  width: 180px;
+  height: 100px;
+  padding: 0.75rem;
+}
+
