@@ -65,6 +65,11 @@ const partnerInfo = {
         description: 'Reshape Biotech develops automated laboratory instruments designed to accelerate microbiology research. Their user-friendly robotics platforms streamline routine lab tasks, enabling greater efficiency and reproducibility in scientific workflows.',
         website: 'https://www.reshapebiotech.com/'
     },
+    'atcc': {
+        title: 'ATCC',
+        description: 'The American Type Culture Collection (ATCC) is a global biological resource center that provides authenticated biological materials and expertise to support scientific research and innovation.',
+        website: 'https://www.atcc.org/'
+    }
 };
 
 // Modal elements
