@@ -10,15 +10,35 @@ const partnerInfo = {
         description: 'KU Leuven Research & Development (LRD) is the technology transfer office of KU Leuven. LRD supports researchers in their research collaborations, IP protection, and the creation of spin-off companies.',
         website: 'https://lrd.kuleuven.be/en'
     },
-    'flanders': {
-        title: 'EWI Department',
+    'ewi': {
+        title: 'EWI',
         description: 'The Department of Economy, Science and Innovation (EWI) of the Flemish Government develops and implements policies to stimulate scientific research and innovation in Flanders.',
         website: 'https://www.ewi-vlaanderen.be/en'
+    },
+    'pollet-water-group': {
+        title: 'Pollet Water Group',
+        description: 'Pollet Water Group is a leading provider of water treatment solutions, specializing in innovative technologies for water purification, filtration, and environmental sustainability.',
+        website: 'https://www.polletwatergroup.com'
+    },
+    'cargill': {
+        title: 'Cargill',
+        description: 'Cargill is a global food corporation that provides food, agriculture, financial and industrial products and services. They are committed to sustainable agriculture and innovative food solutions worldwide.',
+        website: 'https://www.cargill.com/'
     },
     'snapgene': {
         title: 'SnapGene',
         description: 'SnapGene is a software solution that helps molecular biologists and genetic engineers to plan, visualize, and document their cloning and PCR experiments.',
         website: 'https://www.snapgene.com/'
+    },
+    'datacamp': {
+        title: 'DataCamp',
+        description: 'DataCamp is the world\'s leading platform for learning data science and analytics. They provide interactive courses and hands-on practice to help individuals and organizations build data skills.',
+        website: 'https://www.datacamp.com/'
+    },
+    'bain-company': {
+        title: 'Bain & Company',
+        description: 'Bain & Company is a global management consulting firm that helps organizations drive sustainable growth and innovation. They work with leading companies across industries to solve complex business challenges.',
+        website: 'https://www.bain.com/'
     },
     'technovation': {
         title: 'TechnovationHub',
@@ -33,7 +53,7 @@ const partnerInfo = {
     'idt': {
         title: 'Integrated DNA Technologies',
         description: 'Integrated DNA Technologies (IDT) is a leading provider of custom nucleic acids and genomics solutions. Their high-quality DNA and RNA products support research in synthetic biology, diagnostics, and therapeutics worldwide.',
-        website: 'https://eu.idtdna.com/page'
+        website: 'https://eu.idtdna.com/'
     },
     'eppendorf': {
         title: 'Eppendorf',
@@ -69,6 +89,21 @@ const partnerInfo = {
         title: 'ATCC',
         description: 'The American Type Culture Collection (ATCC) is a global biological resource center that provides authenticated biological materials and expertise to support scientific research and innovation.',
         website: 'https://www.atcc.org/'
+    },
+    'globachem': {
+        title: 'Globachem',
+        description: 'Globachem is a specialized chemical company providing high-quality reagents and laboratory chemicals for research and industrial applications.',
+        website: 'https://globachem.com/en/'
+    },
+    'novogene': {
+        title: 'Novogene',
+        description: 'Novogene is a leading genomics company providing comprehensive sequencing services, including whole genome sequencing, transcriptome analysis, and bioinformatics solutions for research and clinical applications.',
+        website: 'https://en.novogene.com/'
+    },
+    'glasatelier-saillart': {
+        title: 'Glasatelier Saillart',
+        description: 'Glasatelier Saillart is a specialized glassblowing and scientific glassware company, creating custom laboratory equipment and artistic glass pieces with precision and craftsmanship.',
+        website: 'https://www.glasatelier-saillart.be/'
     }
 };
 
